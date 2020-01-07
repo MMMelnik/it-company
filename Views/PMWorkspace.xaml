@@ -1,0 +1,54 @@
+﻿<Window x:Class="it_company.Views.PMWorkspace"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:it_company.Views"
+        mc:Ignorable="d"
+        Title="PMWorkspace"  MinHeight="450" Height="450" Width="700" Style="{StaticResource MyWindowStyle}">
+    <Grid>
+        <Label Content="You are logged in as John Petrow PM" HorizontalAlignment="Left" 
+               Margin="10,10,0,0" VerticalAlignment="Top" FontSize="25"/>
+        <Button Content="LogOut" HorizontalAlignment="Left" Margin="503,22,0,0" VerticalAlignment="Top" Width="102" Height="31" Click="Button_Click_2"/>
+        <ListBox Margin="26,183,578,81">
+            <ListBoxItem Content="Project #1" Selected="ListBoxItem_Selected_1"/>
+            <ListBoxItem Content="Project #2"/>
+            <ListBoxItem Content="Project #3"/>
+        </ListBox>
+        <ListBox Margin="173,183,431,81">
+            <ListBoxItem Content="Task #1"/>
+            <ListBoxItem Content="Task #2"/>
+            <ListBoxItem Content="Task #3"/>
+        </ListBox>
+        <ListBox Margin="406,183,198,81">
+            <ListBoxItem Content="PR "/>
+            <ListBoxItem Content="IT "/>
+            <ListBoxItem Content="Design"/>
+        </ListBox>
+        <ListBox Margin="570,183,34,81">
+            <ListBoxItem Content="John Wein"/>
+            <ListBoxItem Content="Asa Tor"/>
+            <ListBoxItem Content="Venrir Lok"/>
+        </ListBox>
+        <Label Content="Projects" HorizontalAlignment="Left" 
+            Margin="42,132,0,0" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="0.508,1.039"/>
+        <Label Content="Tasks" HorizontalAlignment="Left" 
+            Margin="193,132,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label Content="Departments" HorizontalAlignment="Left" 
+            Margin="392,132,0,0" VerticalAlignment="Top" FontSize="20"/>
+
+        <Label Content="Employees" HorizontalAlignment="Left" 
+            Margin="566,132,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <CheckBox Content="Done" HorizontalAlignment="Left" Margin="283,223,0,0" VerticalAlignment="Top"/>
+        <Label Content="Filter task by" HorizontalAlignment="Left" 
+            Margin="283,188,0,0" VerticalAlignment="Top" FontSize="15"/>
+        <CheckBox Content="In progress" HorizontalAlignment="Left" Margin="283,246,0,0" VerticalAlignment="Top" />
+        <CheckBox Content="Denied" HorizontalAlignment="Left" Margin="283,266,0,0" VerticalAlignment="Top"/>
+        <CheckBox Content="Expired" HorizontalAlignment="Left" Margin="283,286,0,0" VerticalAlignment="Top"/>
+        <CheckBox Content="Close to deadline" HorizontalAlignment="Left" Margin="282,306,0,0" VerticalAlignment="Top"/>
+        <Button Content="Apply filter" HorizontalAlignment="Left" Margin="288,338,0,0" VerticalAlignment="Top" Width="97"/>
+        <Button Content="Assign task" HorizontalAlignment="Left" Margin="570,371,0,0" VerticalAlignment="Top" Width="97"/>
+        <Button Content="Add new project" HorizontalAlignment="Left" Margin="25,371,0,0" VerticalAlignment="Top" Width="97" Click="Button_Click"/>
+        <Button Content="Add new task" HorizontalAlignment="Left" Margin="173,371,0,0" VerticalAlignment="Top" Width="97" Click="Button_Click_1"/>
+    </Grid>
+</Window>
