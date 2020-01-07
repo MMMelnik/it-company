@@ -1,11 +1,8 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Collections.ObjectModel;
 using System.Windows;
 using it_company.Models;
 using it_company.Repository;
-using System.Windows.Controls;
 using it_company.Views;
 
 namespace it_company.ViewModels
@@ -60,6 +57,16 @@ namespace it_company.ViewModels
             {
                 _password = value;
                 OnPropertyChanged(nameof(Password));
+            }
+        }
+
+        public string Email
+        {
+            get => _email;
+            set
+            {
+                _email = value;
+                OnPropertyChanged(nameof(Email));
             }
         }
 

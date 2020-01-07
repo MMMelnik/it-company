@@ -35,9 +35,12 @@
         <Label Grid.Row="4" Grid.Column="1" Content="E-Mail:" FontSize="15"/>
         <TextBox Grid.Column="2" Grid.Row="1" Margin="3" 
                  Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}"/>
-        <TextBox Grid.Column="2" Grid.Row="2" Margin="3" />
-        <TextBox Grid.Column="2" Grid.Row="3" Margin="3" />
-        <TextBox Grid.Column="2" Grid.Row="4" Margin="3" />
+        <TextBox Grid.Column="2" Grid.Row="2" Margin="3"
+                 Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox Grid.Column="2" Grid.Row="3" Margin="3" 
+                 Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox Grid.Column="2" Grid.Row="4" Margin="3"
+                 Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}" />
         <Button Content="Submit"  Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" 
                 HorizontalAlignment="Center" Margin="0,25,0,0" VerticalAlignment="Top" Height="26" Width="72"/>
         <TextBlock Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,56,0,-5" VerticalAlignment="Top"
