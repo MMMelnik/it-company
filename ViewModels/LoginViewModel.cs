@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Linq;
+using System.Security.RightsManagement;
 using System.Windows;
 using it_company.Models;
 using it_company.Repository;
@@ -110,6 +111,46 @@ namespace it_company.ViewModels
 
                            }
 
+                           Closing?.Invoke(this, EventArgs.Empty);
+                       }));
+            }
+        }
+
+        public RelayCommand Register
+        {
+            get
+            {
+                return _register ??
+                       (_register = new RelayCommand(o =>
+                       {
+                           Register reg = new Register();
+                           reg.Show();
+                           Closing?.Invoke(this, EventArgs.Empty);
+                       }));
+            }
+        }
+
+        public RelayCommand Exit
+        {
+            get
+            {
+                return _exit ??
+                       (_exit = new RelayCommand(o =>
+                       {
+                           Environment.Exit(0);
+                       }));
+            }
+        }
+
+        public RelayCommand ForgotPassword
+        {
+            get
+            {
+                return _forgotPassword ??
+                       (_forgotPassword = new RelayCommand(o =>
+                       {
+                           ForgotPassword forgotPassword = new ForgotPassword();
+                           forgotPassword.Show();
                            Closing?.Invoke(this, EventArgs.Empty);
                        }));
             }
