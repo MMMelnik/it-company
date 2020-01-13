@@ -11,10 +11,10 @@ namespace it_company.Models
         public int ProjectId { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        //public virtual ICollection<Task> Tasks { get; set; }
-        //public Project()
-        //{
-        //    Tasks = new List<Task>();
-        //}
+        public virtual ICollection<Task> Tasks { get; set; }
+        public Project()
+        {
+            Tasks = new List<Task>();
+        }
     }
 }

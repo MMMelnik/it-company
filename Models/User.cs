@@ -23,11 +23,11 @@ namespace it_company.Models
         public int PasswordHash { get; set; }
         public Role Role { get; set; }
         public int DepartmentId { get; set; }
-        //public virtual ICollection<Task> Tasks { get; set; }
+        public virtual ICollection<Task> Tasks { get; set; }
 
-        //public User()
-        //{
-        //    Tasks = new List<Task>();
-        //}
+        public User()
+        {
+            Tasks = new List<Task>();
+        }
     }
 }

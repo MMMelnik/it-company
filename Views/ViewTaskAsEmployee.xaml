@@ -26,6 +26,6 @@
             </FlowDocument>
         </RichTextBox>
         <Button Content="Update status" HorizontalAlignment="Left" Margin="206,305,0,0" VerticalAlignment="Top" Width="85"/>
-        <Button Content="Go to workspace" HorizontalAlignment="Left" Margin="23,364,0,0" VerticalAlignment="Top" Width="97" Click="Button_Click"/>
+        <Button Content="Go to workspace" HorizontalAlignment="Left" Margin="23,364,0,0" VerticalAlignment="Top" Width="97" />
     </Grid>
 </Window>

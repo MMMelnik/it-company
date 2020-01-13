@@ -1,16 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 using it_company.ViewModels;
 
 namespace it_company.Views
@@ -22,6 +10,7 @@ namespace it_company.Views
     {
         public Login()
         {
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
             InitializeComponent();
             LoginViewModel loginViewModel = new LoginViewModel();
 
@@ -32,6 +21,7 @@ namespace it_company.Views
 
         public Login(string email)
         {
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
             this.TbEmail.Text = email;
             InitializeComponent();
             LoginViewModel loginViewModel = new LoginViewModel(email);

@@ -15,7 +15,7 @@
             Margin="52,164,0,0" VerticalAlignment="Top" FontSize="20"/>
         <TextBox HorizontalAlignment="Left" Margin="268,108,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" Height="24"/>
         <ComboBox HorizontalAlignment="Left" Margin="266,175,0,0" VerticalAlignment="Top" Width="132"/>
-        <Button Content="Go to workspace" HorizontalAlignment="Left" Margin="27,386,0,0" VerticalAlignment="Top" Width="95" Height="25" Click="Button_Click"/>
+        <Button Content="Go to workspace" HorizontalAlignment="Left" Margin="27,386,0,0" VerticalAlignment="Top" Width="95" Height="25" />
         <Button Content="Save" HorizontalAlignment="Left" Margin="374,386,0,0" VerticalAlignment="Top" Width="95" Height="25"/>
     </Grid>
 </Window>

@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using it_company.Models;
 using it_company.Repository;
@@ -93,7 +90,7 @@ namespace it_company.ViewModels
                                                empWrk.Show();
                                                break;
                                            case Role.Pm:
-                                               PMWorkspace pmWrk = new PMWorkspace(ref user);
+                                               PmWorkspace pmWrk = new PmWorkspace(ref user);
                                                pmWrk.Show();
                                                break;
                                            case Role.Admin:
