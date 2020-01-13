@@ -22,8 +22,8 @@ namespace it_company.Views
         public Login(string email)
         {
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            this.TbEmail.Text = email;
             InitializeComponent();
+            this.TbEmail.Text = email;
             LoginViewModel loginViewModel = new LoginViewModel(email);
 
             DataContext = loginViewModel;

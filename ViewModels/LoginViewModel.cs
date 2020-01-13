@@ -16,7 +16,7 @@ namespace it_company.ViewModels
         }
         public LoginViewModel(string email)
         {
-            _email = email;
+            Email = email;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

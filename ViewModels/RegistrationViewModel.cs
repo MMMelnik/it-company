@@ -110,7 +110,7 @@ namespace it_company.ViewModels
 
                             MessageBox.Show($" {user.FName}"+" "+ $" {user.LName} ", "Вы успешно зарегестрировались", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                            Login lgn = new Login();
+                            Login lgn = new Login(_email);
                             lgn.Show();
                         }
 
