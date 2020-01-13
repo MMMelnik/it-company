@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using it_company.ViewModels;
 
 namespace it_company.Views
 {
@@ -22,38 +23,24 @@ namespace it_company.Views
         public Login()
         {
             InitializeComponent();
+            LoginViewModel loginViewModel = new LoginViewModel();
+
+            DataContext = loginViewModel;
+
+            loginViewModel.Closing += (s, e) => Close();
         }
 
-        private void TblForgotPassword_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        public Login(string email)
         {
-            ForgotPassword fgpass = new ForgotPassword();
-            fgpass.Show();
-            Close();
+            this.TbEmail.Text = email;
+            InitializeComponent();
+            LoginViewModel loginViewModel = new LoginViewModel(email);
+
+            DataContext = loginViewModel;
+
+            loginViewModel.Closing += (s, e) => Close();
         }
 
-        private void TblRegistration_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            Register register = new Register();
-            register.Show();
-            Close();
-        }
-
-        private void TblExit_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            Close();
-        }
-
-        private void SubmitBtn_Click(object sender, RoutedEventArgs e)
-        {
-            EmployeeWorkspace empWork = new EmployeeWorkspace();
-            AdminWorkspace admWork = new AdminWorkspace();
-            PMWorkspace pmWork = new PMWorkspace();
-            //Thread.Sleep(50);
-            empWork.Show();
-            admWork.Show();
-            pmWork.Show();
-            Close();
-        }
     }
 }
 

@@ -12513,5 +12513,8 @@ select new {
       </Group>
     </Group>
   </Queries>
-  <WarnFilter />
+  <WarnFilter>
+    <DontWarn>Evaluation  days left.
+You can ask for evaluation extension if required from the menu Help then License Information.</DontWarn>
+  </WarnFilter>
 </NDepend>

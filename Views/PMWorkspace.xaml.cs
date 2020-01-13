@@ -11,17 +11,22 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using it_company.Models;
+using it_company.ViewModels;
 
 namespace it_company.Views
 {
     /// <summary>
     /// Interaction logic for PMWorkspace.xaml
     /// </summary>
-    public partial class PMWorkspace : Window
+    public partial class PmWorkspace : Window
     {
-        public PMWorkspace()
+        public PmWorkspace(ref User user)
         {
             InitializeComponent();
+            PmWorkspaceModel pmWrkMod = new PmWorkspaceModel(ref user);
+            DataContext = pmWrkMod;
+            pmWrkMod.Closing += (s, e) => Close();
         }
 
         private void ListBoxItem_Selected(object sender, RoutedEventArgs e)

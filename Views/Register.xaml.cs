@@ -24,10 +24,10 @@ namespace it_company.Views
         public Register()
         {
             InitializeComponent();
-            RegistrationViewModel _registrationViewModel = new RegistrationViewModel();
-            DataContext = _registrationViewModel;
+            RegistrationViewModel registrationViewModel = new RegistrationViewModel();
+            DataContext = registrationViewModel;
 
-            _registrationViewModel.Closing += (s, e) => Close();
+            registrationViewModel.Closing += (s, e) => Close();
         }
     }
 }

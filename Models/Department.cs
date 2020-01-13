@@ -11,12 +11,12 @@ namespace it_company.Models
     {
         public int DepartmentId { get; set; }
         public string Title { get; set; }
-        public string Head { get; set; }
-        public virtual ICollection<User> Employees{ get; set; }
+        public string HeadId { get; set; }
+        //public virtual ICollection<User> Employees{ get; set; }
 
-        public Department()
-        {
-            Employees = new List<User>();
-        }
+        //public Department()
+        //{
+        //    Employees = new List<User>();
+        //}
     }
 }

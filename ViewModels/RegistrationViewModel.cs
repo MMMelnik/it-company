@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Linq;
 using System.Windows;
 using it_company.Models;
 using it_company.Repository;
@@ -18,11 +19,11 @@ namespace it_company.ViewModels
 
         public event EventHandler Closing;
 
-        public bool Validate = false;
+        private bool Validate = false;
 
-        RelayCommand _register;
-        RelayCommand _login;
-        RelayCommand _exit;
+        private RelayCommand _register;
+        private RelayCommand _login;
+        private RelayCommand _exit;
 
         private string _fName;
         private string _lName;
@@ -79,17 +80,24 @@ namespace it_company.ViewModels
                     {
                         if (Validate)
                         {
-                            MessageBox.Show("Поля заполнены не верно", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
+                            MessageBox.Show("Please, check if all fields were filled in correct way! ", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
                             return;
                         }
 
 
-                        using (DataContext db = new DataContext())
+                        using (DataContext dataContext = new DataContext())
                         {
-                            UserRepository accountsRepository = new UserRepository(db);
+                            UserRepository userRepository = new UserRepository(dataContext);
 
+                            var user = userRepository.GetAll(i => i.Email == Email).FirstOrDefault();
 
-                            User usr = new User()
+                            if (user != null)
+                            {
+                                MessageBox.Show("User with this Email already exists");
+                                return;
+                            }
+
+                            user = new User()
                             {
                                 Email =_email,
                                 FName = _fName,
@@ -97,10 +105,10 @@ namespace it_company.ViewModels
                                 PasswordHash = _password.GetHashCode()
                             };
 
-                            accountsRepository.Add(usr);
-                            db.SaveChanges();
+                            userRepository.Add(user);
+                            dataContext.SaveChanges();
 
-                            MessageBox.Show($" {usr.FName}"+" "+ $" {usr.LName} ", "Вы успешно зарегестрировались", MessageBoxButton.OK, MessageBoxImage.Information);
+                            MessageBox.Show($" {user.FName}"+" "+ $" {user.LName} ", "Вы успешно зарегестрировались", MessageBoxButton.OK, MessageBoxImage.Information);
 
                             Login lgn = new Login();
                             lgn.Show();
@@ -119,6 +127,7 @@ namespace it_company.ViewModels
                     (_login = new RelayCommand(o =>
                     {
                         Login login = new Login();
+                        
                         login.Show();
                         Closing?.Invoke(this, EventArgs.Empty);
                     }));

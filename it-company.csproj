@@ -73,6 +73,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Migrations\202001071712497_InitialCreate.cs" />
+    <Compile Include="Migrations\202001071712497_InitialCreate.designer.cs">
+      <DependentUpon>202001071712497_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="RelayCommand.cs" />
     <Compile Include="Repository\DataContext.cs" />
     <Compile Include="Models\Department.cs" />
@@ -86,7 +91,11 @@
     <Compile Include="Repository\ProjectRepository.cs" />
     <Compile Include="Repository\TaskRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
+    <Compile Include="ViewModels\AdminWorkspaceModel.cs" />
+    <Compile Include="ViewModels\EmployeeWorkspaceModel.cs" />
     <Compile Include="ViewModels\ForgotPasswordViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\PmWorkspaceModel.cs" />
     <Compile Include="ViewModels\UserLogic.cs" />
     <Compile Include="ViewModels\RegistrationViewModel.cs" />
     <Compile Include="Views\AdminWorkspace.xaml.cs">
@@ -113,8 +122,8 @@
     <Compile Include="Views\NewTask.xaml.cs">
       <DependentUpon>NewTask.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\PMWorkspace.xaml.cs">
-      <DependentUpon>PMWorkspace.xaml</DependentUpon>
+    <Compile Include="Views\PmWorkspace.xaml.cs">
+      <DependentUpon>PmWorkspace.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
@@ -152,6 +161,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Migrations\202001071712497_InitialCreate.resx">
+      <DependentUpon>202001071712497_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -208,7 +220,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\PMWorkspace.xaml">
+    <Page Include="Views\PmWorkspace.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using it_company.Models;
+using it_company.ViewModels;
 
 namespace it_company.Views
 {
@@ -19,9 +21,12 @@ namespace it_company.Views
     /// </summary>
     public partial class AdminWorkspace : Window
     {
-        public AdminWorkspace()
+        public AdminWorkspace(ref User user)
         {
             InitializeComponent();
+            AdminWorkspaceModel adWrkMod = new AdminWorkspaceModel(ref user);
+            DataContext = adWrkMod;
+            adWrkMod.Closing += (s, e) => Close();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

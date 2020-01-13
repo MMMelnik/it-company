@@ -7,28 +7,55 @@
         mc:Ignorable="d"
         Title="Login" MinHeight="320" Height="320" Width="330" Style="{StaticResource MyWindowStyle}">
     <Grid>
-        <Label Content="Login" HorizontalAlignment="Center" Margin="0,41,0,0" VerticalAlignment="Top" FontSize="25"/>
-        <Label Content="E-Mail" HorizontalAlignment="Left" Margin="40,99,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <Label Content="password" HorizontalAlignment="Left" Margin="9,148,0,0" VerticalAlignment="Top" FontSize="18" Grid.RowSpan="2"/>
-        <TextBox HorizontalAlignment="Center" Margin="0,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"  Height="26"/>
-        <TextBox HorizontalAlignment="Center" Margin="0,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"  Height="26" Grid.RowSpan="2"/>
-        <Label x:Name="Exit" Content="Exit" Margin="25,106,0,0" VerticalAlignment="Top" Grid.Row="1"
-                Height="36" MouseLeftButtonUp="TblExit_MouseLeftButtonUp" FontSize="16" Width="37" RenderTransformOrigin="-0.541,0.417"/>
-        <Label x:Name="forgotPassword" Content="Forgot password" Margin="0,40,0,0" VerticalAlignment="Top" Grid.Row="1"
-                Height="36" MouseLeftButtonUp="TblForgotPassword_MouseLeftButtonUp" FontSize="16" Width="138" RenderTransformOrigin="-0.541,0.417" HorizontalAlignment="Center"/>
-        <Label x:Name="tblRegistration" Content="Register" Margin="240,106,0,0" VerticalAlignment="Top" Grid.Row="1" 
-               Height="36" MouseLeftButtonUp="TblRegistration_MouseLeftButtonUp" FontSize="16"/>
-        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Center" Margin="0,81,0,0" Grid.Row="1" VerticalAlignment="Top"  Height="26" Width="72" Click="SubmitBtn_Click" />
         <Grid.RowDefinitions>
-            <RowDefinition Height="50*" />
-            <RowDefinition Height="50*" />
+            <RowDefinition Height="100" />
+            <!--title-->
+            <RowDefinition Height="30" />
+            <!---email-->
+            <RowDefinition Height="30" />
+            <!---password-->
+            <RowDefinition Height="*" />
+            <!--navigation + submit btn-->
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50" />
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="130" />
+            <ColumnDefinition Width="50" />
+        </Grid.ColumnDefinitions>
+        <Label Content="Login" HorizontalAlignment="Center"  VerticalAlignment="Top" FontSize="25" 
+               Grid.Row ="0" Grid.ColumnSpan="2" Grid.Column="1" Margin="72,35,88,0"/>
+        <Label Content="E-Mail" FontSize="18" Grid.Row="1" Grid.Column="1"/>
+        <Label Content="Password"  FontSize="18" Grid.RowSpan="2" Grid.Row="2" Grid.Column="1"/>
+        <TextBox  x:Name="TbEmail" TextWrapping="Wrap" Margin="3" Grid.Row="1" Grid.Column="2"
+                  Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox TextWrapping="Wrap"  Margin="3" Grid.Row="2" Grid.Column="2"
+                 Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}"/>
+        <Button x:Name="BtnLogin"  Content="Login"  Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" Width="72" Command="{Binding Login}" Margin="72,38,86,63"/>
+        <TextBlock Grid.Row="3" Grid.Column="1" Margin="10,74,53,0" VerticalAlignment="Top"
+                   Height="36" FontSize="16" Width="37" RenderTransformOrigin="1.811,0.722">
+            <Hyperlink x:Name="Exit" Command="{Binding Exit}" Style="{StaticResource Link}">
+                Exit
+            </Hyperlink>
+        </TextBlock>
+        <TextBlock Grid.Row="3" Grid.Column="2" Margin="65,74,3,19" 
+                   Height="36" FontSize="16" RenderTransformOrigin="1.811,0.722">
+            <Hyperlink x:Name="Register" Command="{Binding Register}" Style="{StaticResource Link}">
+                Register
+            </Hyperlink>
+        </TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2"
+                   Height="36" FontSize="16" RenderTransformOrigin="1.811,0.722" Margin="5,27,45,96" Grid.RowSpan="2">
+            <Hyperlink x:Name="ForgotPassword" Command="{Binding ForgotPassword}" Style="{StaticResource Link}">
+                Forgot Password
+            </Hyperlink>
+        </TextBlock>
     </Grid>
     <Window.Triggers>
         <EventTrigger RoutedEvent="Loaded">
             <EventTrigger.Actions>
                 <BeginStoryboard>
-                    <Storyboard TargetProperty="Width" TargetName="btnSubmit">
+                    <Storyboard TargetProperty="Width" TargetName="BtnLogin">
                         <DoubleAnimation From="75" To="120"
                                          AutoReverse="True"
                                          RepeatBehavior="2x"
@@ -36,7 +63,7 @@
                     </Storyboard>
                 </BeginStoryboard>
                 <BeginStoryboard>
-                    <Storyboard TargetProperty="Height" TargetName="btnSubmit">
+                    <Storyboard TargetProperty="Height" TargetName="BtnLogin">
                         <DoubleAnimation From="20" To="27"
                                          AutoReverse="True"
                                          RepeatBehavior="2x"
@@ -44,7 +71,7 @@
                     </Storyboard>
                 </BeginStoryboard>
                 <BeginStoryboard>
-                    <Storyboard TargetProperty="Height" TargetName="btnSubmit">
+                    <Storyboard TargetProperty="Height" TargetName="BtnLogin">
                         <DoubleAnimation From="20" To="27"
                                          AutoReverse="True"
                                          RepeatBehavior="2x"
@@ -52,7 +79,7 @@
                     </Storyboard>
                 </BeginStoryboard>
                 <BeginStoryboard>
-                    <Storyboard TargetProperty="Width" TargetName="btnSubmit">
+                    <Storyboard TargetProperty="Width" TargetName="BtnLogin">
                         <DoubleAnimation From="75" To="120"
                                          AutoReverse="True"
                                          RepeatBehavior="2x"
