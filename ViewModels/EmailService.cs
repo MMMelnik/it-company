@@ -1,29 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Net.Mail;
 using System.Windows;
 
-namespace it_company.Models
+namespace it_company.ViewModels
 {
-    internal class UserLogic
+    internal class EmailService
     {
-        private void sendPasswordOnEmail()
+        public void sendPasswordOnEmail()
         {
             try
             {
                 var mail = new MailMessage();
                 var smtpServer = new SmtpClient("smtp.gmail.com");
 
-                mail.From = new MailAddress("your_email_address@gmail.com");
-                mail.To.Add("to_address");
-                mail.Subject = "Test Mail";
-                mail.Body = "This is for testing SMTP mail from GMAIL";
+                mail.From = new MailAddress("kolanio757@gmail.com");
+                mail.To.Add("my_last_@outlook.com");
+                mail.Subject = "New Password";
+                mail.Body = "Password";
 
                 smtpServer.Port = 587;
-                smtpServer.Credentials = new System.Net.NetworkCredential("username", "password");
+                smtpServer.Credentials = new System.Net.NetworkCredential("kolanio757@gmail.com", "759G5Fult8s");
                 smtpServer.EnableSsl = true;
 
                 smtpServer.Send(mail);

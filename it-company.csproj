@@ -96,7 +96,7 @@
     <Compile Include="ViewModels\ForgotPasswordViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\PmWorkspaceModel.cs" />
-    <Compile Include="ViewModels\UserLogic.cs" />
+    <Compile Include="ViewModels\EmailService.cs" />
     <Compile Include="ViewModels\RegistrationViewModel.cs" />
     <Compile Include="Views\AdminWorkspace.xaml.cs">
       <DependentUpon>AdminWorkspace.xaml</DependentUpon>

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using it_company.Models;
+using it_company.ViewModels;
 
 namespace it_company.Repository
 {

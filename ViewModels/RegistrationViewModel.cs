@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Linq;
 using System.Windows;
-using it_company.Models;
+using it_company.ViewModels;
 using it_company.Repository;
 using it_company.Views;
 

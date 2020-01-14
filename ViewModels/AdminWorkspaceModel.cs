@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using it_company.Models;
+using it_company.ViewModels;
 
 namespace it_company.ViewModels
 {

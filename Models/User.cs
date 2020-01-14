@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace it_company.Models
+namespace it_company.ViewModels
 {
     public enum Role
     {

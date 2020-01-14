@@ -1,5 +1,5 @@
 ﻿using System.Windows;
-using it_company.Models;
+using it_company.ViewModels;
 using it_company.ViewModels;
 
 namespace it_company.Views

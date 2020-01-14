@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Input;
+using it_company.ViewModels;
 
 namespace it_company.Views
 {
@@ -12,18 +13,9 @@ namespace it_company.Views
         {
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             InitializeComponent();
-        }
-
-        private void TblLogin_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            Login login = new Login();
-            login.Show();
-            Close();
-        }
-
-        private void TblExit_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            Close();
+            ForgotPasswordViewModel forPassMod = new ForgotPasswordViewModel();
+            DataContext = forPassMod;
+            forPassMod.Closing += (s, e) => Close();
         }
     }
 }

@@ -14,10 +14,9 @@
         <Label Content="Tasks" HorizontalAlignment="Center" 
                Margin="0,124,0,0" VerticalAlignment="Top" FontSize="20"/>
         <Button Content="LogOut" HorizontalAlignment="Left" Margin="10,48,0,0" VerticalAlignment="Top" Width="97" Click="Button_Click"/>
-        <ListBox Margin="113,170,105,38">
-            <ListBoxItem Selected="ListBoxItem_Selected">Task #1</ListBoxItem>
-            <ListBoxItem>Task #2</ListBoxItem>
-            <ListBoxItem>Task #3</ListBoxItem>
-        </ListBox>
+        
+        <ListBox Margin="113,170,105,38" ItemsSource="{Binding Tasks}" 
+                 SelectedValue="{Binding SelectedTaskId}" 
+                 SelectedValuePath="Id" DisplayMemberPath="Title" />
     </Grid>
 </Window>
