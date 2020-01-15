@@ -1,5 +1,5 @@
 ﻿using System.Data.Entity;
-using it_company.ViewModels;
+using it_company.Models;
 
 namespace it_company.Repository
 {

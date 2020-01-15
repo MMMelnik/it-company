@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 using it_company.ViewModels;
-using it_company.ViewModels;
+using it_company.Models;
 
 namespace it_company.Views
 {

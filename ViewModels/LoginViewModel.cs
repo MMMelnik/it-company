@@ -1,9 +1,8 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Linq;
-using System.Security.RightsManagement;
 using System.Windows;
-using it_company.ViewModels;
+using it_company.Models;
 using it_company.Repository;
 using it_company.Views;
 
@@ -13,6 +12,7 @@ namespace it_company.ViewModels
     {
         public LoginViewModel()
         {
+            ClientWcf.Connect();
         }
         public LoginViewModel(string email)
         {

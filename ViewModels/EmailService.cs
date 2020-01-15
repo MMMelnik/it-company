@@ -6,7 +6,7 @@ namespace it_company.ViewModels
 {
     internal class EmailService
     {
-        public void sendPasswordOnEmail()
+        public void SendPasswordOnEmail()
         {
             try
             {

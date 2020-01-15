@@ -1,6 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
-using it_company.ViewModels;
+using it_company.Models;
 
 namespace it_company.ViewModels
 {

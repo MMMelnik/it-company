@@ -45,7 +45,7 @@ namespace it_company.ViewModels
                        (_sendPassword = new RelayCommand(o =>
                        {
                            EmailService emailService = new EmailService();
-                           emailService.sendPasswordOnEmail();
+                           emailService.SendPasswordOnEmail();
                            Login login = new Login();
                            login.Show();
                            Closing?.Invoke(this, EventArgs.Empty);

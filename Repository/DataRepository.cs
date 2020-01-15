@@ -8,7 +8,7 @@ namespace it_company.Repository
     {
         protected DataContext Context;
 
-        public DataRepository(DataContext context)
+        protected DataRepository(DataContext context)
         {
             Context = context;
         }
