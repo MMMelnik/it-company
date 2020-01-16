@@ -21,7 +21,7 @@ namespace it_company.Models
         public string Description { get; set; }
         public Status Status { get; set; }
         public DateTime DueTo { get; set; }
-        public int AssignedToEmployeeId { get; set; }
+        public int UserId { get; set; }
         public int ProjectId { get; set; }
     }
 }

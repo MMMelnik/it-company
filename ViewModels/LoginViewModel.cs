@@ -12,7 +12,7 @@ namespace it_company.ViewModels
     {
         public LoginViewModel()
         {
-            ClientWcf.Connect();
+            
         }
         public LoginViewModel(string email)
         {
