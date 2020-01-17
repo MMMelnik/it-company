@@ -1,5 +1,4 @@
 ﻿using System.Windows;
-using System.Windows.Input;
 using it_company.ViewModels;
 
 namespace it_company.Views

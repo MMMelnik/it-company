@@ -17,26 +17,5 @@ namespace it_company.Views
             DataContext = adWrkMod;
             adWrkMod.Closing += (s, e) => Close();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Login log = new Login();
-            log.Show();
-            Close();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            NewEmployee newEmp = new NewEmployee();
-            newEmp.Show();
-            Close();
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            NewDepartment newDep = new NewDepartment();
-            newDep.Show();
-            Close();
-        }
     }
 }

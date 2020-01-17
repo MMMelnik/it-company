@@ -106,6 +106,7 @@
     <Compile Include="ViewModels\PmWorkspaceModel.cs" />
     <Compile Include="ViewModels\EmailService.cs" />
     <Compile Include="ViewModels\RegistrationViewModel.cs" />
+    <Compile Include="ViewModels\ViewEmployeeAsAdminModel.cs" />
     <Compile Include="Views\AdminWorkspace.xaml.cs">
       <DependentUpon>AdminWorkspace.xaml</DependentUpon>
     </Compile>

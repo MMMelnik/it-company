@@ -10,6 +10,7 @@ namespace it_company.Views
     {
         public Login()
         {
+            
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             InitializeComponent();
             LoginViewModel loginViewModel = new LoginViewModel();
@@ -17,6 +18,7 @@ namespace it_company.Views
             DataContext = loginViewModel;
 
             loginViewModel.Closing += (s, e) => Close();
+            ClientWcf.Connect();
         }
 
         public Login(string email)

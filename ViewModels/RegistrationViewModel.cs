@@ -88,6 +88,7 @@ namespace it_company.ViewModels
                         using (DataContext dataContext = new DataContext())
                         {
                             UserRepository userRepository = new UserRepository(dataContext);
+                            DepartmentRepository depRep = new DepartmentRepository(dataContext);
 
                             var user = userRepository.GetAll(i => i.Email == Email).FirstOrDefault();
 
@@ -97,18 +98,27 @@ namespace it_company.ViewModels
                                 return;
                             }
 
+                            if (depRep.GetAll(i => i.Title == "AllStaff") == null)
+                            {
+                                depRep.Add(new Department()
+                                {
+                                    Title = "AllStaff"
+                                });
+                            }
+
                             user = new User()
                             {
                                 Email =_email,
                                 FName = _fName,
                                 LName = _lName,
-                                PasswordHash = _password.GetHashCode()
+                                PasswordHash = _password.GetHashCode(),
+                                DepartmentId = depRep.GetAll(i => i.Title == "AllStaff").Find(i => i.Title == "AllStaff").DepartmentId
                             };
 
                             userRepository.Add(user);
                             dataContext.SaveChanges();
 
-                            MessageBox.Show($" {user.FName}"+" "+ $" {user.LName} ", "Вы успешно зарегестрировались", MessageBoxButton.OK, MessageBoxImage.Information);
+                            MessageBox.Show($"Nice to see you here, {user.FName} {user.LName} !", "Welcome!", MessageBoxButton.OK, MessageBoxImage.Information);
 
                             Login lgn = new Login(_email);
                             lgn.Show();
@@ -141,6 +151,7 @@ namespace it_company.ViewModels
                 return _exit ??
                     (_exit = new RelayCommand(o =>
                     {
+                        
                         Environment.Exit(0);
                     }));
             }

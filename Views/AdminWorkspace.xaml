@@ -5,39 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:it_company.Views"
         mc:Ignorable="d"
-         Title="AdminWorkspace" Height="450" Width="700" Style="{StaticResource MyWindowStyle}">
-    
+         Title="AdminWorkspace" Height="450" Width="505" MinWidth="505" MaxWidth="505"  Style="{StaticResource MyWindowStyle}">
     <Grid>
-        <Label Content="You are logged in as Admin" HorizontalAlignment="Left" 
-               Margin="10,10,0,0" VerticalAlignment="Top" FontSize="25"/>
-        <Button Content="LogOut" HorizontalAlignment="Left" Margin="503,22,0,0" VerticalAlignment="Top" Width="102" Height="31" Click="Button_Click"/>
-        <ListBox Margin="42,166,562,98">
-            <ListBoxItem Content="PR "/>
-            <ListBoxItem Content="IT "/>
-            <ListBoxItem Content="Design"/>
-        </ListBox>
-        <ListBox Margin="183,166,410,98">
-            <ListBoxItem Content="John Wein"/>
-            <ListBoxItem Content="Asa Tor"/>
-            <ListBoxItem Content="Venrir Lok"/>
-        </ListBox>
-        <Label Content="Departments" HorizontalAlignment="Left" 
-            Margin="28,124,0,0" VerticalAlignment="Top" FontSize="20"/>
-
-        <Label Content="Employees in dep" HorizontalAlignment="Left" 
-            Margin="173,124,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <Button Content="Add dep" HorizontalAlignment="Left" Margin="42,351,0,0" VerticalAlignment="Top" Width="96" Height="27" Click="Button_Click_2"/>
-        <Button Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" Width="40" Height="28"/>
-        <Image Stretch="UniformToFill" Source="0439a4eb-ece9-4b01-ad64-d2a31c961c8f" 
-            VerticalAlignment="Center" HorizontalAlignment="Left" Width="702" Margin="235,0,0,0"/>
-        <ListBox Margin="415,166,189,98">
-            <ListBoxItem Content="John Wein"/>
-            <ListBoxItem Content="Asa Tor"/>
-            <ListBoxItem Content="Venrir Lok"/>
-        </ListBox>
-        <Label Content="Unassigned employees" HorizontalAlignment="Left" 
-            Margin="366,124,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <Button Content="Add employee" HorizontalAlignment="Left" Margin="415,351,0,0" VerticalAlignment="Top" Width="96" Height="27" Click="Button_Click_1"/>
-        <Button Content="-" HorizontalAlignment="Center" Margin="0,251,0,0" VerticalAlignment="Top" Width="40" Height="28"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="89" />
+            <!--title-->
+            <RowDefinition Height="41" />
+            <!---titles-->
+            <RowDefinition Height="224" />
+            <!---listBoxes and nav-->
+            <RowDefinition />
+            <!--navigation + submit btn-->
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="141" />
+            <ColumnDefinition Width="141" />
+            <ColumnDefinition Width="67" />
+            <ColumnDefinition Width="141" />
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Content="You are logged in as Admin" 
+               FontSize="25" Height="43" Width="314" Margin="12,14,26,32"/>
+        <Button Grid.Row="0" Grid.Column="3" Content="LogOut" Width="117" Height="32" Margin="12,25,13,32" Command="{Binding Login}"/>
+        <Label Grid.Row="1" Grid.Column="0" Content="Departments" FontSize="20" Margin="1"/>
+        <Label Grid.Row="1" Grid.Column="1" Content="Employees in" FontSize="20" Margin="1"/>
+        <Label Grid.Row="1" Grid.Column="3" Content="Employees out" FontSize="20" Margin="0,1,-20,1"/>
+        <ListBox x:Name="Departments" Grid.Row="2" Grid.Column="0" ItemsSource="{Binding Departments}" 
+                 DisplayMemberPath="Title" SelectedItem="{Binding SelectedDepartment}" Margin="12" />
+        <ListBox Grid.Row="2" Grid.Column="1" ItemsSource="{Binding EmployeesInDepartment}" 
+                 DisplayMemberPath="FName" SelectedItem="{Binding SelectedEmployee}" Margin="12" />
+        <ListBox Grid.Row="2" Grid.Column="3" ItemsSource="{Binding UnassignedEmployees}" 
+                 SelectedItem="{Binding SelectedEmployee}" Margin="12,10,0,14" Width="117" HorizontalAlignment="Left" KeyDown="{Binding ClickOnEmployee}" />
+        <Button Grid.Row="3" Grid.Column="0" Content="Add New" VerticalAlignment="Top" Height="27" Margin="12,12,12,0"
+                Command="{Binding AddDepartment}" />
+        <Button Grid.Row="3" Grid.Column="1" Content="View Selected" VerticalAlignment="Top" Height="27" Margin="12,12,12,0"
+                Command="{Binding ViewSelectedEmployee}" />
+        <Button Grid.Row="3" Grid.Column="3" Content="Add employee" Margin="12,10,13,26"
+                Command="{Binding AddEmployee}" />
+        <Button Grid.Row="2" Grid.Column="2" Content="+" Margin="17,142,17,54" 
+                Command="{Binding AddEmployeeToSelectedDepartment}" />
+        <Button Grid.Row="2" Grid.Column="2" Content="-" VerticalAlignment="Top" Height="28" Margin="17,72,17,0" 
+                Command="{Binding RemoveEmployeeFromSelected}" />
     </Grid>
 </Window>

@@ -1,4 +1,6 @@
 ﻿using System.Windows;
+using it_company.Models;
+using it_company.ViewModels;
 
 
 namespace it_company.Views
@@ -8,10 +10,13 @@ namespace it_company.Views
     /// </summary>
     public partial class ViewEmployeeAsAdmin : Window
     {
-        public ViewEmployeeAsAdmin()
+        public ViewEmployeeAsAdmin(ref User employee)
         {
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             InitializeComponent();
+            ViewEmployeeAsAdminModel viewEmployeeAsAdminModel = new ViewEmployeeAsAdminModel(ref employee);
+            DataContext = viewEmployeeAsAdminModel;
+            viewEmployeeAsAdminModel.Closing += (s, e) => Close();
         }
     }
 }

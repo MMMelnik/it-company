@@ -5,48 +5,52 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:it_company.Views"
         mc:Ignorable="d"
-       Title="ViewEmployeeAsAdmin" MinHeight="440" Height="450" Width="330" Style="{StaticResource MyWindowStyle}">
+       Title="ViewEmployeeAsAdmin" MinHeight="310" Height="310" Width="330" Style="{StaticResource MyWindowStyle}">
     <Grid>
-        <Label Content="Employee: Noii Harari" HorizontalAlignment="Center" 
-               Margin="0,25,0,0" VerticalAlignment="Top" FontSize="25"/>
-        <RichTextBox Margin="142,134,69,278" RenderTransformOrigin="0.383,-1.497" >
-            <FlowDocument>
-                <Paragraph>
-                    <Run Text="Ultra cool project"/>
-                </Paragraph>
-            </FlowDocument>
-        </RichTextBox>
-        <Button Content="Go to workspace" HorizontalAlignment="Left" Margin="13,388,0,0" VerticalAlignment="Top" Width="99" Height="25"/>
-        <DatePicker HorizontalAlignment="Left" Margin="142,215,0,0" VerticalAlignment="Top" Height="27" Width="119"/>
-        <Button Content="Save chanes" HorizontalAlignment="Left" Margin="132,388,0,0" VerticalAlignment="Top" Width="82" Height="25"/>
-        <Label Content="Department:" HorizontalAlignment="Left" 
-            Margin="27,306,0,0" VerticalAlignment="Top" FontSize="15"/>
-        <ComboBox HorizontalAlignment="Left" Margin="141,311,0,0" VerticalAlignment="Top" Width="120" IsDropDownOpen="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90" />
+            <!--title-->
+            <RowDefinition Height="26" />
+            <!--Fname-->
+            <RowDefinition Height="26" />
+            <!--Lname-->
+            <RowDefinition Height="26" />
+            <!--email-->
+            <RowDefinition Height="26" />
+            <!--Role-->
+            <RowDefinition Height="29" />
+            <!--department-->
+            <RowDefinition Height="*" />
+            <!--navigation + submit btn-->
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50" />
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="130" />
+            <ColumnDefinition Width="50" />
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Content="Employee" HorizontalAlignment="Center" 
+               Margin="45,22,45,0" VerticalAlignment="Top" FontSize="25" Grid.ColumnSpan="2" Width="140" Grid.Column="1"/>
+        <Label Grid.Row="1" Grid.Column="1" Content="First Name:" FontSize="15"/>
+        <Label Grid.Row="2" Grid.Column="1" Content="Last Name:" FontSize="15"/>
+        <Label Grid.Row="3" Grid.Column="1" Content="E-Mail:" FontSize="15"/>
+        <Label Grid.Row="4" Grid.Column="1" Content="Role:" FontSize="15"/>
+        <Label Grid.Row="5" Grid.Column="1" Content="Department:" FontSize="15"/>
+        <TextBox Grid.Column="2" Grid.Row="1" Margin="3" 
+                 Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox Grid.Column="2" Grid.Row="2" Margin="3"
+                 Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox Grid.Column="2" Grid.Row="3" Margin="3" 
+                 Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox Grid.Column="2" Grid.Row="4" Margin="3" 
+                 Text="{Binding Role, UpdateSourceTrigger=PropertyChanged}"/>
+        <ComboBox Grid.Row="5" Grid.Column="2" HorizontalAlignment="Left" Width="120" Margin="3" IsDropDownOpen="True" >
             <ComboBoxItem Content="II"/>
             <ComboBoxItem Content="PR"/>
         </ComboBox>
-        <Label Content="First Name:" HorizontalAlignment="Left" 
-            Margin="27,126,0,0" VerticalAlignment="Top" FontSize="15"/>
-        <Label Content="Last Name:" HorizontalAlignment="Left" 
-            Margin="27,166,0,0" VerticalAlignment="Top" FontSize="15"/>
-        <Label Content="Birth date:" HorizontalAlignment="Left" 
-            Margin="27,212,0,0" VerticalAlignment="Top" FontSize="15"/>
-        <RichTextBox Margin="142,170,68,242" RenderTransformOrigin="0.383,-1.497" >
-            <FlowDocument>
-                <Paragraph>
-                    <Run Text="Ultra cool project"/>
-                </Paragraph>
-            </FlowDocument>
-        </RichTextBox>
-        <RichTextBox Margin="141,263,69,149" RenderTransformOrigin="0.383,-1.497" >
-            <FlowDocument>
-                <Paragraph>
-                    <Run Text="Ultra cool project"/>
-                </Paragraph>
-            </FlowDocument>
-        </RichTextBox>
-        <Label Content="Pass Id:" HorizontalAlignment="Left" 
-            Margin="27,259,0,0" VerticalAlignment="Top" FontSize="15"/>
-        <Button Content="Delete" HorizontalAlignment="Left" Margin="234,388,0,0" VerticalAlignment="Top" Width="69" Height="25"/>
+        <Button Content="Save Changes"  Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" 
+                Margin="12" VerticalAlignment="Top" Height="26" Width="86" Command="{Binding SaveChanges}"/>
+        <Button Content="Delete"  Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" 
+                Margin="90,10,18,54"  Height="26" Width="72" Command="{Binding SaveChanges}"/>
     </Grid>
 </Window>

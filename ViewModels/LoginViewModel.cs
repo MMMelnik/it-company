@@ -58,7 +58,6 @@ namespace it_company.ViewModels
             }
         }
 
-
         public RelayCommand Login
         {
             get
